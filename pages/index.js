@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 const Home = () => {
-  const [userInput, setUserInput] = useState('test');
+  const [userInput, setUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -15,10 +15,13 @@ const Home = () => {
     setIsGenerating(true);
     console.log('CALLING OPENAI...');
     try{
+      console.log('send request')
       const respose = await fetch('/api/generate', {
         method: 'POST',
         body: JSON.stringify({userInput}),
       });
+      console.log('made it out')
+
   
       const data = await respose.json(); // convert response to json
       const { output } = data; // pull out output
