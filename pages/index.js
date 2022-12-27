@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 const Home = () => {
-  const [userInput, setUserInput] = useState('');
+  const [userInput, setUserInput] = useState('test');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -44,14 +44,14 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Krishna Talk:</h1>
+            <h1>Krishna Lessons:</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Ask questions, Krishna knows all.</h2>
+            <h2>Get custom-made lessons from Krishna himself.</h2>
           </div>
         </div>
         <div className='prompt-container'>
-          <textarea placeholder='ask your question here...' className='prompt-box' value={userInput} onChange={onUserChangedText}/>
+          <textarea placeholder='what lesson would you like to learn?' className='prompt-box' value={userInput} onChange={onUserChangedText}/>
         </div>
         <div className='prompt-buttons'>
           <a className={isGenerating ? 'generate-button loading' : 'generate-button'} onClick={callGenerateEndpoint}>
