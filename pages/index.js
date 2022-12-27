@@ -16,14 +16,18 @@ const Home = () => {
     console.log('CALLING OPENAI...');
     try{
       console.log('send request')
-      const respose = await fetch('/api/generate', {
+      const response = await fetch('/api/generate', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify({userInput}),
       });
       console.log('made it out')
 
   
-      const data = await respose.json(); // convert response to json
+      const data = await response.json(); // convert response to json
       console.log(data)
 
       const { output } = data; // pull out output
