@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: #2C3A96;
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -40,7 +40,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: #DFF0F6
 }
 
 .header-title {
@@ -172,7 +172,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: #BE529E;
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -304,7 +304,7 @@ textarea {
     letter-spacing: 0px;
     line-height: 1.4em;
     text-align: start;
-    color: #ffffff;
+    color: #B2DAF4;
     text-decoration: none;
     text-transform: none;
     margin: 0;
