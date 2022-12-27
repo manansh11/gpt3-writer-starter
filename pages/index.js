@@ -28,10 +28,8 @@ const Home = () => {
 
   
       const data = await response.json(); // convert response to json
-      console.log(data)
 
       const { output } = data; // pull out output
-      console.log(output);
       console.log("OpenAI replied...", output.text);
   
       setApiOutput(`${output.text}`)
