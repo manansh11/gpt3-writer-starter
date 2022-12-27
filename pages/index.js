@@ -24,6 +24,8 @@ const Home = () => {
 
   
       const data = await respose.json(); // convert response to json
+      console.log(data)
+
       const { output } = data; // pull out output
       console.log(output);
       console.log("OpenAI replied...", output.text);
