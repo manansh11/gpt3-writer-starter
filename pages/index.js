@@ -14,21 +14,25 @@ const Home = () => {
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
     console.log('CALLING OPENAI...');
+    try{
+      const respose = await fetch('/api/generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({userInput}),
+      });
+  
+      const data = await respose.json(); // convert response to json
+      const { output } = data; // pull out output
+      console.log("OpenAI replied...", output.text);
+  
+      setApiOutput(`${output.text}`)
+      setIsGenerating(false);
+    } catch (e) {
+      console.error(e)
+    }
 
-    const respose = await fetch('/api/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({userInput}),
-    });
-
-    const data = await respose.json(); // convert response to json
-    const { output } = data; // pull out output
-    console.log("OpenAI replied...", output.text);
-
-    setApiOutput(`${output.text}`)
-    setIsGenerating(false);
   }
 
 
