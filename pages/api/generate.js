@@ -31,14 +31,14 @@ const generateAction = async (req, res) => {
 
     const secondPromptCompletion = await openai.createCompletion({
         model: 'text-davinci-003',
-        prompt: `${secondPrompt}${basePromptOutput.text}`,
+        prompt: `${secondPrompt}${basePromptOutput.text}\n`,
         temperature: 0.9,
         max_tokens: 1000,
     });
 
     const secondPromptOutput = secondPromptCompletion.data.choices.pop()
 
-    const toSend = basePromptOutput;
+    const toSend = secondPromptOutput;
 
     res.status(200).json({output: toSend})
 
